@@ -1,4 +1,6 @@
 from tabulate import tabulate
+#quick interest calculator
+
 
 def main():
     amount = int(input("Enter the investment amount: "))
