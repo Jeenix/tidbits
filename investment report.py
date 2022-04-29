@@ -1,7 +1,5 @@
 from tabulate import tabulate
 #quick interest calculator
-
-
 def main():
     amount = int(input("Enter the investment amount: "))
     years = int(input("Enter the number of years: "))
