@@ -29,3 +29,19 @@ def nuke_away(doc, guids_list):
         t.Start()
         doc.Delete(Shared_param.Id)
         t.Commit()
+
+#get project Parameters
+import Autodesk
+from Autodesk.Revit.DB import *
+
+def get_project_params():
+    project_info_collector = FilteredElementCollector(doc) \
+                            .OfCategory(BuiltInCategory.OST_ProjectInformation) \
+                            .ToElements()
+    for i in project_info_collector:
+        project_number_param = i.LookupParameter('Project Number')
+        if project_number_param:
+            project_number = project_number_param.AsString()
+            print(project_number)
+        else: 
+            pass 
